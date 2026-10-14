@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-labelledby="title desc">
+  <title id="title">Bioinformatics × Healthcare AI</title>
+  <desc id="desc">Hyunwoo Jung's focus: microbial genomics, medical machine learning, and evidence-grounded healthcare AI.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101b1b"/><stop offset="1" stop-color="#172c27"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#b3e8c5"/><stop offset="1" stop-color="#59bd99"/></linearGradient>
+  </defs>
+  <rect width="1200" height="270" rx="18" fill="url(#bg)"/>
+  <path d="M48 45h38" stroke="#91d4b2" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="80" fill="#a2c7b6" font-size="15" letter-spacing="3">HYUNWOO JUNG / HEALTHCARE AI</text>
+    <text x="48" y="131" fill="#f3f7f4" font-size="39" font-weight="700">Bioinformatics × Healthcare AI</text>
+    <text x="48" y="171" fill="#b7ccc2" font-size="19">From microbial genomics to evidence-grounded systems</text>
+    <text x="48" y="225" fill="#90d6b4" font-size="14" letter-spacing="2">GENOME → HYPOTHESIS → EVIDENCE → AI</text>
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-width="3" opacity=".8">
+    <path d="M970 38C1090 76 950 126 1070 166S930 230 1030 250"/>
+    <path d="M1070 38C950 76 1090 126 970 166S1110 230 1010 250"/>
+    <path d="M982 43h76M1000 69h40M990 96h60M980 122h80M1004 149h32M990 176h60M980 204h80M1000 231h40" stroke-width="2" opacity=".5"/>
+  </g>
+  <g fill="#9fddbb"><circle cx="982" cy="43" r="4"/><circle cx="1060" cy="122" r="4"/><circle cx="990" cy="176" r="4"/><circle cx="1060" cy="204" r="4"/></g>
+</svg>
