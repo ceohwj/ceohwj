@@ -18,15 +18,25 @@
 | **Healthcare RAG / LLM** · 팀 프로젝트 | 복약 안내의 검색·근거·생성 경계를 설계하고, 출처가 맞지 않거나 모호하면 생성을 제한하는 fail-closed 검증과 Backend 연동을 담당했습니다. | [Case study](https://hyunwoo-jung-portfolio.vercel.app/case-studies/healthcare-rag) · [Dosey 코드 미러](https://github.com/ceohwj/Dosey) · [원본 PR](https://github.com/AI-HealthCare-05/AH_05_04/pull/919) |
 | **Cancer Genomics ML** · 팀 해커톤 | 전처리·피처 엔지니어링·모델링·앙상블·제출을 팀과 공동 수행했습니다. 동일 변이 profile의 중복 노출 위험을 그룹 기반 검증으로 점검했습니다. | [Repository](https://github.com/ceohwj/cancer-subtype-classification) · [검증 설계](https://github.com/ceohwj/cancer-subtype-classification/blob/develop/README.md) |
 | **Chest X-ray Classification** · 개인 프로젝트 | 데이터 감사부터 PyTorch 모델링·OOF 앙상블·threshold 분석까지 수행했습니다. FN/FP trade-off와 Grad-CAM의 marker·border 반응을 검토했습니다. | [Repository](https://github.com/ceohwj/chest-xray-pneumonia-classification-ai) · [Case study](https://hyunwoo-jung-portfolio.vercel.app/case-studies/chest-xray) |
+| **AI 폐렴 판독 지원 백오피스** · 웹 서비스 학습 팀 프로젝트 | 개인 X-ray 프로젝트의 최종 모델을 FastAPI 기반 팀 웹 서비스에 연동했습니다. 진료기록별 폐렴 예측·결과 저장/조회와 Grad-CAM 표시를 구현했습니다. | [Repository](https://github.com/ceohwj/ai-pneumonia-backoffice) · [Case study](https://hyunwoo-jung-portfolio.vercel.app/case-studies/pneumonia-backoffice) |
 | **CodeLingo AI** · 개인 제품 / AI-assisted | 코딩·데이터·Bioinformatics 학습을 위한 local-first 퀴즈 제품입니다. 제품 범위와 품질 기준을 정하고 AI 도구의 구현 결과를 검토했습니다. 런타임 LLM 서비스는 아닙니다. | [Live demo](https://code-lingo-ai.vercel.app/) · [Repository](https://github.com/ceohwj/code-lingo-ai) · [Case study](https://github.com/ceohwj/code-lingo-ai/blob/main/CASE_STUDY.md) |
 
 ## Engineering evidence
+
+### Healthcare RAG / LLM
 
 Healthcare RAG 팀 저장소에서 제가 작성하고 merge된 변경입니다. 코드 미러와 구분해 원본 PR에서 기여 범위와 검증 기록을 확인할 수 있습니다.
 
 - [PR #919 — Medication retrieval](https://github.com/AI-HealthCare-05/AH_05_04/pull/919): 검색 호출과 의약품 snapshot·출처 추적을 하나의 재현 가능한 경계로 연결.
 - [PR #924 — Evidence & runtime assembly](https://github.com/AI-HealthCare-05/AH_05_04/pull/924): citation·provenance가 일치하는 근거만 최종 복약 안내에 연결.
 - [PR #926 — Backend integration](https://github.com/AI-HealthCare-05/AH_05_04/pull/926): FastAPI lifespan에서 Guide executor factory를 초기화하고 Backend가 shared port로 접근하도록 연결.
+
+### X-ray 모델의 웹 서비스 연동
+
+개인 X-ray 프로젝트의 최종 제출 모델을 [팀 서비스에 제공](https://github.com/ceohwj/ai-pneumonia-backoffice/commit/bcff9b4edef26cb05318f0fdacbbdfe73eec3e55)하고, 예측 결과를 환자·진료기록에서 확인할 수 있도록 연결했습니다.
+
+- [PR #68 — Prediction API & Grad-CAM](https://github.com/kimeunmi82/Oz_codingSchool/pull/68): 진료기록별 폐렴 예측, 결과 저장·조회, Heatmap 생성과 화면 연동.
+- [PR #69 — Stored OOF evaluation](https://github.com/kimeunmi82/Oz_codingSchool/pull/69): 저장된 5-fold OOF 혼동행렬 재계산과 평가 보고서. 새 이미지 추론이나 독립 테스트 평가가 아닙니다.
 
 팀 프로젝트의 전체 성과를 개인 단독 성과로 표현하지 않습니다. 의료 AI의 내부 검증·대회 결과와 소프트웨어 테스트는 임상 유효성의 증거로 해석하지 않습니다.
 
@@ -42,7 +52,7 @@ WGS·비교유전체·KEGG 분석에서 기능 가설을 도출하고, PCR·배�
 <details>
 <summary>30초 소개 · Interview introduction</summary>
 
-미생물 유전체 연구에서 얻은 생물학적 해석과 증거 구분 기준을 의료 AI와 Healthcare RAG로 이어 왔습니다. 개인 의료영상 프로젝트에서는 중복 위험과 오류 비용을 검토했고, 팀 RAG 프로젝트에서는 검색 근거를 검증하고 Backend에 연결하는 경계를 담당했습니다. 점수와 기능 구현뿐 아니라 무엇을 검증했고 어떤 한계가 남았는지 설명하는 엔지니어를 지향합니다.
+미생물 유전체 연구에서 얻은 생물학적 해석과 증거 구분 기준을 의료 AI와 Healthcare RAG로 이어 왔습니다. 개인 의료영상 프로젝트에서 중복 위험과 오류 비용을 검토한 뒤, 최종 모델을 팀 백오피스의 예측·결과 저장/조회 API로 연결했습니다. 팀 RAG 프로젝트에서는 검색 근거를 검증하고 Backend에 연결하는 경계를 담당했습니다. 점수와 기능 구현뿐 아니라 무엇을 검증했고 어떤 한계가 남았는지 설명하는 엔지니어를 지향합니다.
 
 </details>
 
